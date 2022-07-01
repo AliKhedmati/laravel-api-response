@@ -1,11 +1,11 @@
 <?php
 
-namespace Alikhedmati\ApiResponse\Providers\Facades;
+namespace Alikhedmati\ApiResponse\Facades;
 
 use Alikhedmati\ApiResponse\Providers\Contracts\ApiInterface;
 use Illuminate\Support\Facades\Facade;
 
-class ApiResponse extends Facade
+class API extends Facade
 {
     protected static function getFacadeAccessor(): string
     {

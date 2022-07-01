@@ -18,8 +18,8 @@ class ApiResponseGenerator implements ApiInterface
     public function success(string $message, Collection|array $data = [], int $status = 200): JsonResponse
     {
         return response()->json([
-            'message'   =>  $message,
-            'data'  =>  $data
+            'message' => $message,
+            'data' => $data
         ], $status);
     }
 
@@ -33,8 +33,8 @@ class ApiResponseGenerator implements ApiInterface
     public function failure(string $message, Collection|array $errors = null, int $status = 400): JsonResponse
     {
         return response()->json([
-            'message'   =>  $message,
-            'errors'    =>  $errors
+            'message' => $message,
+            'errors' => $errors
         ], $status);
     }
 }

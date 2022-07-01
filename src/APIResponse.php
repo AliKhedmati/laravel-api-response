@@ -1,11 +1,12 @@
 <?php
 
-namespace AliKhedmati\APIResponse;
+namespace Alikhedmati\ApiResponse;
 
+use Alikhedmati\ApiResponse\Contracts\APIInterface;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Collection;
 
-trait HasApiResponse
+class APIResponse implements APIInterface
 {
     /**
      * @param string $message
@@ -14,7 +15,7 @@ trait HasApiResponse
      * @return JsonResponse
      */
 
-    protected function successResponse(string $message, Collection|array $data = [], int $status = 200): JsonResponse
+    public function success(string $message, Collection|array $data = [], int $status = 200): JsonResponse
     {
         return response()->json([
             'message'   =>  $message,
@@ -29,7 +30,7 @@ trait HasApiResponse
      * @return JsonResponse
      */
 
-    protected function failureResponse(string $message, Collection|array $errors = null, int $status = 400): JsonResponse
+    public function failure(string $message, Collection|array $errors = null, int $status = 400): JsonResponse
     {
         return response()->json([
             'message'   =>  $message,

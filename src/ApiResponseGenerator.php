@@ -2,11 +2,11 @@
 
 namespace Alikhedmati\ApiResponse;
 
-use Alikhedmati\ApiResponse\Contracts\APIInterface;
+use Alikhedmati\ApiResponse\Providers\Contracts\ApiInterface;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Collection;
 
-class APIResponse implements APIInterface
+class ApiResponseGenerator implements ApiInterface
 {
     /**
      * @param string $message

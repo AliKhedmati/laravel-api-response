@@ -1,10 +1,10 @@
 <?php
 
-namespace Alikhedmati\ApiResponse\Contracts;
+namespace Alikhedmati\ApiResponse\Providers\Contracts;
 
 use Illuminate\Support\Collection;
 
-interface APIInterface
+interface ApiInterface
 {
     public function success(string $message, Collection|array $data = [], int $status = 200);
 

@@ -2,8 +2,8 @@
 
 namespace Alikhedmati\ApiResponse\Facades;
 
-use Illuminate\Support\Facades\Facade;
 use Alikhedmati\ApiResponse\Contracts\APIInterface;
+use Illuminate\Support\Facades\Facade;
 
 class APIResponse extends Facade
 {

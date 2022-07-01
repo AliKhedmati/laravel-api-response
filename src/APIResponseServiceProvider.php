@@ -1,7 +1,8 @@
 <?php
 
-namespace AliKhedmati\APIResponse;
+namespace AliKhedmati\ApiResponse;
 
+use Alikhedmati\ApiResponse\Contracts\APIInterface;
 use Illuminate\Support\ServiceProvider;
 
 class APIResponseServiceProvider extends ServiceProvider
@@ -13,6 +14,6 @@ class APIResponseServiceProvider extends ServiceProvider
 
     public function register()
     {
-
+        $this->app->bind(APIInterface::class, fn() => new APIResponse());
     }
 }

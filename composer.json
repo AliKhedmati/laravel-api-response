@@ -15,8 +15,8 @@
     "minimum-stability": "stable",
     "require": {
         "php": "^8.1",
-        "illuminate/http": "*",
-        "illuminate/support": "*"
+        "illuminate/http": "^v9.19.0",
+        "illuminate/support": "v9.19.0"
     },
     "extra": {
         "laravel": {

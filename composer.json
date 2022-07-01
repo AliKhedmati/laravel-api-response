@@ -31,5 +31,6 @@
         "allow-plugins": {
             "kylekatarnls/update-helper": true
         }
-    }
+    },
+    "license": "MIT"
 }

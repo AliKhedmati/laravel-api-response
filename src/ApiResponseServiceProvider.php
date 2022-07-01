@@ -1,8 +1,7 @@
 <?php
 
-namespace Alikhedmati\ApiResponse\Providers;
+namespace Alikhedmati\ApiResponse;
 
-use Alikhedmati\ApiResponse\ApiResponseGenerator;
 use Alikhedmati\ApiResponse\Contracts\ApiInterface;
 use Illuminate\Support\ServiceProvider;
 

@@ -21,7 +21,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "AliKhedmati\\ApiResponse\\Providers\\ApiResponseServiceProvider"
+                "AliKhedmati\\ApiResponse\\ApiResponseServiceProvider"
             ],
             "aliases": {
                 "API": "ApiResponse"

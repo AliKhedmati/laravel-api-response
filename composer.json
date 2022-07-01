@@ -3,7 +3,7 @@
     "description": "Laravel API response.",
     "autoload": {
         "psr-4": {
-            "Alikhedmati\\ApiResponse\\": "src/"
+            "Alikhedmati\\API\\": "src/"
         }
     },
     "authors": [
@@ -21,7 +21,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "AliKhedmati\\ApiResponse\\ApiResponseServiceProvider"
+                "Alikhedmati\\ApiResponse\\ApiResponseServiceProvider"
             ],
             "aliases": {
                 "API": "ApiResponse"

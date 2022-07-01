@@ -1,0 +1,27 @@
+{
+    "name": "alikhedmati/api-response",
+    "description": "Laravel API response.",
+    "autoload": {
+        "psr-4": {
+            "Alikhedmati\\ApiResponse\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ali Khedmati",
+            "email": "ali@khedmati.ir"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.1",
+        "laravel/framework": "^9"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AliKhedmati\\APIResponse\\APIResponseServiceProvider"
+            ]
+        }
+    }
+}

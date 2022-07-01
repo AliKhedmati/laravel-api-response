@@ -2,7 +2,7 @@
 
 namespace Alikhedmati\ApiResponse;
 
-use Alikhedmati\ApiResponse\Providers\Contracts\ApiInterface;
+use Alikhedmati\ApiResponse\Contracts\ApiInterface;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Collection;
 

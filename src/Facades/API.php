@@ -2,7 +2,7 @@
 
 namespace Alikhedmati\ApiResponse\Facades;
 
-use Alikhedmati\ApiResponse\Providers\Contracts\ApiInterface;
+use Alikhedmati\ApiResponse\Contracts\ApiInterface;
 use Illuminate\Support\Facades\Facade;
 
 class API extends Facade

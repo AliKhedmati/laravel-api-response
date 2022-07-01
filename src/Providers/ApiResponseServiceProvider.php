@@ -3,7 +3,7 @@
 namespace Alikhedmati\ApiResponse\Providers;
 
 use Alikhedmati\ApiResponse\ApiResponseGenerator;
-use Alikhedmati\ApiResponse\Providers\Contracts\ApiInterface;
+use Alikhedmati\ApiResponse\Contracts\ApiInterface;
 use Illuminate\Support\ServiceProvider;
 
 class ApiResponseServiceProvider extends ServiceProvider

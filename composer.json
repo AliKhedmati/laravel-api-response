@@ -24,7 +24,7 @@
                 "Alikhedmati\\ApiResponse\\ApiResponseServiceProvider"
             ],
             "aliases": {
-                "API": "ApiResponse"
+                "API": "AliKhedmati\\ApiResponse\\Facades\\API"
             }
         }
     },

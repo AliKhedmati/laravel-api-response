@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Facade;
 
 class API extends Facade
 {
+    /**
+     * @return string
+     */
+
     protected static function getFacadeAccessor(): string
     {
         return ApiInterface::class;

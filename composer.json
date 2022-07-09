@@ -1,5 +1,5 @@
 {
-    "name": "alikhedmati/api-response",
+    "name": "alikhedmati/laravel-api-response",
     "description": "Laravel API response.",
     "autoload": {
         "psr-4": {
@@ -14,17 +14,16 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": "^8.1",
-        "illuminate/http": "^v9.19.0",
-        "illuminate/support": "^v9.19.0"
+        "php": "^8",
+        "laravel/framework": "^v9"
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Alikhedmati\\ApiResponse\\ApiResponseServiceProvider"
+                "Alikhedmati\\Api\\ApiServiceProvider"
             ],
             "aliases": {
-                "API": "Alikhedmati\\ApiResponse\\Facades\\API"
+                "API": "Alikhedmati\\Api\\Facades\\Api"
             }
         }
     },

@@ -1,12 +1,12 @@
 <?php
 
-namespace Alikhedmati\ApiResponse;
+namespace Alikhedmati\Api;
 
-use Alikhedmati\ApiResponse\Contracts\ApiInterface;
+use Alikhedmati\Api\Contracts\ApiInterface;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Collection;
 
-class ApiResponseGenerator implements ApiInterface
+class Api implements ApiInterface
 {
     /**
      * @param string $message

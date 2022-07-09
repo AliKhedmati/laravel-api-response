@@ -1,6 +1,6 @@
 <?php
 
-namespace Alikhedmati\ApiResponse\Contracts;
+namespace Alikhedmati\Api\Contracts;
 
 use Illuminate\Support\Collection;
 

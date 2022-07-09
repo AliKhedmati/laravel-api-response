@@ -20,10 +20,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Alikhedmati\\Api\\ApiServiceProvider"
+                "Alikhedmati\\ApiResponse\\ApiServiceProvider"
             ],
             "aliases": {
-                "API": "Alikhedmati\\Api\\Facades\\Api"
+                "API": "Alikhedmati\\ApiResponse\\Facades\\Api"
             }
         }
     },

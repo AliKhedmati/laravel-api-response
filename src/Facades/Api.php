@@ -1,8 +1,8 @@
 <?php
 
-namespace Alikhedmati\Api\Facades;
+namespace Alikhedmati\ApiResponse\Facades;
 
-use Alikhedmati\Api\Contracts\ApiInterface;
+use Alikhedmati\ApiResponse\Contracts\ApiInterface;
 use Illuminate\Support\Facades\Facade;
 
 class Api extends Facade

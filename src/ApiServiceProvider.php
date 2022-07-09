@@ -1,8 +1,8 @@
 <?php
 
-namespace Alikhedmati\Api;
+namespace Alikhedmati\ApiResponse;
 
-use Alikhedmati\Api\Contracts\ApiInterface;
+use Alikhedmati\ApiResponse\Contracts\ApiInterface;
 use Illuminate\Support\ServiceProvider;
 
 class ApiServiceProvider extends ServiceProvider

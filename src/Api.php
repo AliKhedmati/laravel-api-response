@@ -25,12 +25,12 @@ class Api implements ApiInterface
 
     /**
      * @param string $message
-     * @param Collection|array|null $errors
+     * @param Collection|array $errors
      * @param int $status
      * @return JsonResponse
      */
 
-    public function failure(string $message, Collection|array $errors = null, int $status = 400): JsonResponse
+    public function failure(string $message, Collection|array $errors = [], int $status = 400): JsonResponse
     {
         return response()->json([
             'message' => $message,

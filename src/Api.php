@@ -2,11 +2,12 @@
 
 namespace Alikhedmati\ApiResponse;
 
-use Alikhedmati\ApiResponse\Contracts\ApiInterface;
+use Alikhedmati\ApiResponse\Contracts\ApiContract;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Response;
 
-class Api implements ApiInterface
+class Api implements ApiContract
 {
     /**
      * @param string $message
@@ -17,7 +18,7 @@ class Api implements ApiInterface
 
     public function success(string $message, Collection|array $data = [], int $status = 200): JsonResponse
     {
-        return response()->json([
+        return Response::json([
             'message' => $message,
             'data' => $data
         ], $status);
@@ -32,7 +33,7 @@ class Api implements ApiInterface
 
     public function failure(string $message, Collection|array $errors = [], int $status = 400): JsonResponse
     {
-        return response()->json([
+        return Response::json([
             'message' => $message,
             'errors' => $errors
         ], $status);

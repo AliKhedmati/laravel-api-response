@@ -2,7 +2,7 @@
 
 namespace Alikhedmati\ApiResponse\Facades;
 
-use Alikhedmati\ApiResponse\Contracts\ApiInterface;
+use Alikhedmati\ApiResponse\Contracts\ApiContract;
 use Illuminate\Support\Facades\Facade;
 
 class Api extends Facade
@@ -13,6 +13,6 @@ class Api extends Facade
 
     protected static function getFacadeAccessor(): string
     {
-        return ApiInterface::class;
+        return ApiContract::class;
     }
 }

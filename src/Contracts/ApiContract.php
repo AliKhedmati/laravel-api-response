@@ -4,7 +4,7 @@ namespace Alikhedmati\ApiResponse\Contracts;
 
 use Illuminate\Support\Collection;
 
-interface ApiInterface
+interface ApiContract
 {
     public function success(string $message, Collection|array $data = [], int $status = 200);
 

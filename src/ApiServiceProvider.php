@@ -2,18 +2,13 @@
 
 namespace Alikhedmati\ApiResponse;
 
-use Alikhedmati\ApiResponse\Contracts\ApiInterface;
+use Alikhedmati\ApiResponse\Contracts\ApiContract;
 use Illuminate\Support\ServiceProvider;
 
 class ApiServiceProvider extends ServiceProvider
 {
-    public function boot()
-    {
-
-    }
-
     public function register()
     {
-        $this->app->bind(ApiInterface::class, fn() => new Api());
+        $this->app->bind(ApiContract::class, fn() => new Api());
     }
 }

@@ -7,35 +7,81 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Response;
 
-class Api implements ApiContract
+class Api
 {
+
     /**
-     * @param string $message
-     * @param Collection|array $data
-     * @param int $status
-     * @return JsonResponse
+     * @var int
      */
 
-    public function success(string $message, Collection|array $data = [], int $status = 200): JsonResponse
+    protected int $statusCode = 200;
+
+    /**
+     * @var Collection|array
+     */
+
+    protected Collection|array $data = [];
+    
+    /**
+     * @param int $statusCode
+     * @return $this
+     */
+
+    public function setStatusCode(int $statusCode): static
     {
-        return Response::json([
-            'message' => $message,
-            'data' => $data
-        ], $status);
+        $this->statusCode = $statusCode;
+
+        return $this;
     }
 
     /**
-     * @param string $message
-     * @param Collection|array $errors
-     * @param int $status
+     * @return int
+     */
+
+    protected function getStatusCode(): int
+    {
+        return $this->statusCode;
+    }
+
+    /**
+     * @param Collection|array $data
+     * @return $this
+     */
+
+    public function setData(Collection|array $data): static
+    {
+        $this->data = $data;
+
+        return $this;
+    }
+
+    /**
+     * @return array|Collection
+     */
+
+    public function getData(): array|Collection
+    {
+        return $this->data;
+    }
+
+    /**
+     * @return string
+     */
+
+    protected function generateMessage(): string
+    {
+        return trans('api-response::httpStatusCodes.'. $this->getStatusCode() . '.large');
+    }
+
+    /**
      * @return JsonResponse
      */
 
-    public function failure(string $message, Collection|array $errors = [], int $status = 400): JsonResponse
+    public function response(): JsonResponse
     {
         return Response::json([
-            'message' => $message,
-            'errors' => $errors
-        ], $status);
+            'message' => $this->generateMessage(),
+            'data' => $this->getData()
+        ], $this->getStatusCode());
     }
 }

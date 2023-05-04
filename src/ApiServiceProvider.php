@@ -7,8 +7,24 @@ use Illuminate\Support\ServiceProvider;
 
 class ApiServiceProvider extends ServiceProvider
 {
-    public function register()
+    /**
+     * @return void
+     */
+
+    public function register(): void
     {
-        $this->app->bind(ApiContract::class, fn() => new Api());
+        $this->app->bind('api', fn() => new Api());
+    }
+
+    /**
+     * @return void
+     */
+
+    public function boot(): void
+    {
+        $this->loadTranslationsFrom(
+            path: __DIR__.'/../lang',
+            namespace: 'api-response'
+        );
     }
 }

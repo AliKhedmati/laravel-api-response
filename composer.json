@@ -4,7 +4,10 @@
     "autoload": {
         "psr-4": {
             "Alikhedmati\\ApiResponse\\": "src/"
-        }
+        },
+        "files": [
+            "src/Helpers/helpers.php"
+        ]
     },
     "authors": [
         {
@@ -24,7 +27,7 @@
                 "Alikhedmati\\ApiResponse\\ApiServiceProvider"
             ],
             "aliases": {
-                "ApiResponse": "Alikhedmati\\ApiResponse\\Facades\\Api"
+                "Api": "Alikhedmati\\ApiResponse\\Facades\\Api"
             }
         }
     },

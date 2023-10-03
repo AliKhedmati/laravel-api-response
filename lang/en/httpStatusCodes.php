@@ -1,10 +1,6 @@
 <?php
 
 return [
-    '1xx' => [
-        'short' => 'Informational',
-        'large' => 'Request received, continuing process. This class of status code indicates a provisional response, consisting only of the Status-Line and optional headers, and is terminated by an empty line. Since HTTP/1.0 did not define any 1xx status codes, servers must not send a 1xx response to an HTTP/1.0 client except under experimental conditions.',
-    ],
     100 => [
         'short' => 'Continue',
         'large' => 'The server has received the request headers and the client should proceed to send the request body (in the case of a request for which a body needs to be sent; for example, a POST request). Sending a large request body to a server after a request has been rejected for inappropriate headers would be inefficient. To have a server check the request\'s headers, a client must send Expect: 100-continue as a header in its initial request and receive a 100 Continue status code in response before sending the body. The response 417 Expectation Failed indicates the request should not be continued.',
@@ -20,10 +16,6 @@ return [
     103 => [
         'short' => 'Checkpoint',
         'large' => 'A POST or PUT request that was previously aborted is to be resumed.',
-    ],
-    '2xx' => [
-        'short' => 'Success',
-        'large' => 'This class of status codes indicates the action requested by the client was received, understood, accepted, and processed successfully.',
     ],
     200 => [
         'short' => 'OK',
@@ -61,10 +53,6 @@ return [
         'short' => 'Already Reported',
         'large' => 'The members of a DAV binding have already been enumerated in a previous reply to this request, and are not being included again.',
     ],
-    '3xx' => [
-        'short' => 'Redirection',
-        'large' => 'This class of status code indicates the client must take additional action to complete the request. Many of these status codes are used in URL redirection. A user agent may carry out the additional action with no user interaction only if the method used in the second request is GET or HEAD. A user agent may automatically redirect a request. A user agent should detect and intervene to prevent cyclical redirects.',
-    ],
     300 => [
         'short' => 'Multiple Choices',
         'large' => 'Indicates multiple options for the resource from which the client may choose (via agent-driven content negotiation). For example, this code could be used to present multiple video format options, to list files with different filename extensions, or to suggest word-sense disambiguation.',
@@ -100,10 +88,6 @@ return [
     308 => [
         'short' => 'Permanent Redirect',
         'large' => 'The request and all future requests should be repeated using another URI. 307 and 308 parallel the behaviors of 302 and 301, but do not allow the HTTP method to change. So, for example, submitting a form to a permanently redirected resource may continue smoothly.',
-    ],
-    '4xx' => [
-        'short' => 'Client Error',
-        'large' => 'The 4xx class of status code is intended for situations in which the client seems to have erred. Except when responding to a HEAD request, the server should include an entity containing an explanation of the error situation, and whether it is a temporary or permanent condition. These status codes are applicable to any request method. User agents should display any included entity to the user.',
     ],
     400 => [
         'short' => 'Bad Request',
@@ -216,10 +200,6 @@ return [
     451 => [
         'short' => 'Unavailable For Legal Reasons',
         'large' => 'A server operator has received a legal demand to deny access to a resource or to a set of resources that includes the requested resource. The code 451 was chosen as a reference to the novel Fahrenheit 451.',
-    ],
-    '5xx' => [
-        'short' => 'Server Error',
-        'large' => 'The server failed to fulfill an apparently valid request. Response status codes beginning with the digit 5 indicate cases in which the server is aware that it has encountered an error or is otherwise incapable of performing the request. Except when responding to a HEAD request, the server should include an entity containing an explanation of the error situation, and indicate whether it is a temporary or permanent condition. Likewise, user agents should display any included entity to the user. These response codes are applicable to any request method.',
     ],
     500 => [
         'short' => 'Internal Server Error',

@@ -8,12 +8,23 @@ use Illuminate\Support\Facades\Response;
 
 class Api
 {
+    /**
+     * @var int
+     */
 
-    public function __construct(
-        protected int $statusCode = 200,
-        protected Collection|array $data = [],
-        protected string $message = ''
-    ) {}
+    protected int $statusCode;
+
+    /**
+     * @var Collection|array
+     */
+
+    protected Collection|array $data;
+
+    /**
+     * @var string
+     */
+
+    protected string $message;
     
     /**
      * @param int $statusCode
@@ -67,7 +78,7 @@ class Api
     public function response(): JsonResponse
     {
         return Response::json([
-            'message' => $this->message ?? $this->generateMessage(),
+            'message' => $this->message ?: $this->generateMessage(),
             'data' => $this->data
         ], $this->statusCode);
     }

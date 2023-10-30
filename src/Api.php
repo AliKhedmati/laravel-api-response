@@ -78,7 +78,7 @@ class Api
     public function response(): JsonResponse
     {
         return Response::json([
-            'message' => $this->message ?: $this->generateMessage(),
+            'message' => $this?->message ?? $this->generateMessage(),
             'data' => $this->data
         ], $this->statusCode);
     }

@@ -2,7 +2,6 @@
 
 namespace Alikhedmati\ApiResponse;
 
-use Alikhedmati\ApiResponse\Contracts\ApiContract;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Response;
@@ -10,17 +9,11 @@ use Illuminate\Support\Facades\Response;
 class Api
 {
 
-    /**
-     * @var int
-     */
-
-    protected int $statusCode = 200;
-
-    /**
-     * @var Collection|array
-     */
-
-    protected Collection|array $data = [];
+    public function __construct(
+        protected int $statusCode = 200,
+        protected Collection|array $data = [],
+        protected string $message = ''
+    ) {}
     
     /**
      * @param int $statusCode
@@ -32,15 +25,6 @@ class Api
         $this->statusCode = $statusCode;
 
         return $this;
-    }
-
-    /**
-     * @return int
-     */
-
-    protected function getStatusCode(): int
-    {
-        return $this->statusCode;
     }
 
     /**
@@ -56,12 +40,15 @@ class Api
     }
 
     /**
-     * @return array|Collection
+     * @param string $message
+     * @return $this
      */
 
-    public function getData(): array|Collection
+    public function setMessage(string $message): static
     {
-        return $this->data;
+        $this->message = $message;
+
+        return $this;
     }
 
     /**
@@ -70,7 +57,7 @@ class Api
 
     protected function generateMessage(): string
     {
-        return trans('api-response::httpStatusCodes.'. $this->getStatusCode() . '.large');
+        return trans('api-response::httpStatusCodes.'. $this->statusCode . '.large');
     }
 
     /**
@@ -80,8 +67,8 @@ class Api
     public function response(): JsonResponse
     {
         return Response::json([
-            'message' => $this->generateMessage(),
-            'data' => $this->getData()
-        ], $this->getStatusCode());
+            'message' => $this->message ?? $this->generateMessage(),
+            'data' => $this->data
+        ], $this->statusCode);
     }
 }

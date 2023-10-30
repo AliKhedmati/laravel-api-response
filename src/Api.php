@@ -12,13 +12,13 @@ class Api
      * @var int
      */
 
-    protected int $statusCode;
+    protected int $statusCode = 200;
 
     /**
      * @var Collection|array
      */
 
-    protected Collection|array $data;
+    protected Collection|array $data = [];
 
     /**
      * @var string
